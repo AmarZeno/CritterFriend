@@ -9,9 +9,18 @@ public class Motion : MonoBehaviour {
 
     public GameObject childRef;
     public GameObject hand;
+    public Transform foreArm;
+    private Transform InitialHandState;
 
 
-	 /// <summary>
+
+
+    void Start() {
+        InitialHandState = transform;
+    }
+
+
+    /// <summary>
     /// The Leap controller.
     /// </summary>
     Controller controller;
@@ -64,6 +73,8 @@ public class Motion : MonoBehaviour {
         // Check if the Leap Motion Controller is ready
         if ( !IsReady || Hands == null )
         {
+            transform.position = InitialHandState.transform.position;
+            transform.rotation = InitialHandState.transform.rotation;
             return;
         }
 
@@ -75,7 +86,7 @@ public class Motion : MonoBehaviour {
         // transform.rotation *= Quaternion.Euler( mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll );
         //childRef.transform.rotation = Quaternion.Euler(mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll);
       //  transform.SetParent(hand.transform);
-        transform.rotation = Quaternion.Euler(mainHand.Direction.Pitch , mainHand.Direction.Yaw , mainHand.PalmNormal.Roll );
+      //  transform.rotation = Quaternion.Euler(mainHand.Direction.Pitch , mainHand.Direction.Yaw , mainHand.PalmNormal.Roll );
 
         //  transform.TransformPoint(hand.transform.po);
         Vector3 unityVector = mainHand.PalmPosition.ToVector3();
@@ -89,13 +100,25 @@ public class Motion : MonoBehaviour {
        // Matrix mat = UnityMatrixExtension.GetLeapMatrix(provider.transform);
         transform.position = UnityMatrixExtension.GetLeapMatrix(provider.transform).TransformPoint(mainHand.PalmPosition).ToVector3();
 
-       //  Quaternion unityRotation = Quaternion.Euler(mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll);
-       // Vector3 unityTranslation = UnityMatrixExtension.GetLeapMatrix(provider.transform).origin.ToVector3();
+        //  transform.rotation = new Quaternion(foreArm.transform.rotation.x + 90, foreArm.transform.rotation.y + 90, foreArm.transform.rotation.z + 90, foreArm.transform.rotation.w + 90);
+
+       // transform.rotation = mainHand.Arm.Rotation.ToQuaternion();
+
+        //foreach (Hand hand in provider.CurrentFrame.Hands)
+        //{
+        //    if (mainHand.IsRight)
+        //    {
+        //            transform.position = mainHand.PalmPosition.ToVector3();
+        //    }
+        //}
+
+        //  Quaternion unityRotation = Quaternion.Euler(mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll);
+        // Vector3 unityTranslation = UnityMatrixExtension.GetLeapMatrix(provider.transform).origin.ToVector3();
         //Vector3 unityScale = new Vector3(leapMatrix.xBasis.Magnitude,
         // leapMatrix.yBasis.Magnitude,
         // leapMatrix.zBasis.Magnitude);
 
-       // transform.TransformPoint(unityVector);
+        // transform.TransformPoint(unityVector);
     }
 
 }
