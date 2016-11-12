@@ -4,19 +4,19 @@ using UnityEngine.UI;
 using System.Collections;
 public class UIManager : MonoBehaviour {
 
-    public Text text_Poacher_Target_collision;
+    public Text text_for_capture_collision;
 
     void Start() {
-        if(text_Poacher_Target_collision == null) {
+        if(text_for_capture_collision == null) {
             Debug.Log("Text collision empty");
         }else {
-            text_Poacher_Target_collision.enabled = false;
+            text_for_capture_collision.enabled = false;
         }
         
     }
 
     /*is called by the Poacher class*/
     public void EnableTextCollision() {
-        text_Poacher_Target_collision.enabled = true;
+        text_for_capture_collision.enabled = true;
     }
 }
