@@ -5,16 +5,19 @@ public class Movement : MonoBehaviour {
     public float movementSpeed = 5.0f;
 
     public GameObject CameraEye;
+    public GameObject HMWRig;
 
+  
     private Transform CameraEyeInitialState;
     // Use this for initialization
     void Start () {
         CameraEyeInitialState = CameraEye.transform;
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || HMWRig.GetComponent<Motion>().isAccelerationEnabled == true)
         {
             //print("hell");
            // Debug.Log("Hell");
