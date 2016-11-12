@@ -1,25 +1,33 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections;
 
-public class VehicleManager : MonoBehaviour {
+public class VehicleManager : MonoBehaviour
+{
 
     public GameObject[] vehicles;
-    public int vehicleCount;
-    
+
+    public float currentTimer;
+    public float maxTimer;
+
     void Start()
     {
-        GenerateVehicles();
+        currentTimer = Time.deltaTime;
+        StartCoroutine(GenerateVehicles());
     }
 
-    IEnumerator GenerateVehicles() {
-        vehicleCount = vehicles.Length;
-        foreach (GameObject g in vehicles)
-        {
-            GameObject vehicle = Instantiate(g, gameObject.transform.position, Quaternion.identity) as GameObject;
-            yield return new WaitForSeconds(1f);
+    void Update() {
+        if (currentTimer > maxTimer) {
+            currentTimer = 0f;
+            Debug.Log("yeah, timer is over");
+
+        }
+        currentTimer += Time.deltaTime * 1f;
+    }
+
+    IEnumerator GenerateVehicles()
+    {
+        foreach (GameObject g in vehicles) {
+            yield return new WaitForSeconds(4f);
         }
     }
-
-    
 }

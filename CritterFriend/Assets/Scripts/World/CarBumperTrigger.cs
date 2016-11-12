@@ -12,8 +12,7 @@ public class CarBumperTrigger : MonoBehaviour {
     void OnTriggerEnter(Collider other ) {
         if(other.gameObject.tag == "VehicleBackTrigger") {
             car.isCarMoving = false;
-        }else
-        {
+        }else {
             Debug.Log("adadwdD");
         }
     }

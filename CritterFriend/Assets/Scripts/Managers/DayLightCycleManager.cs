@@ -9,8 +9,10 @@ public class DayLightCycleManager : MonoBehaviour {
     public float currentTimeOfDay = 0;
     [HideInInspector]
     public float timeMultiplier = 1f;
-
+    
     float sunInitialIntensity;
+
+    public GameObject[] lights;
 
     void Start()
     {
@@ -20,6 +22,29 @@ public class DayLightCycleManager : MonoBehaviour {
     void Update()
     {
         UpdateSun();
+
+        if( currentTimeOfDay > 0.4 && currentTimeOfDay < 0.6)
+        {
+            foreach (GameObject g in lights)
+            {
+                g.SetActive(false);
+            }
+        }else
+        {
+            foreach (GameObject g in lights)
+            {
+                g.SetActive(true);
+            }
+        }
+
+        //if(currentTimeOfDay > 0.6)
+        //{
+        //    foreach (GameObject g in lights)
+        //    {
+        //        g.SetActive(true);
+        //    }
+        //}
+
 
         currentTimeOfDay += (Time.deltaTime / secondsInFullDay) * timeMultiplier;
 

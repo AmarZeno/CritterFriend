@@ -5,7 +5,8 @@ public class Cars : MonoBehaviour {
 
     public float vehicleSpeed;
     private Vector3 startingPosition;
-    public bool isCarMoving = false; 
+    public bool isCarMoving = false;
+    public int direction;
 
     void Start()
     {
@@ -13,7 +14,7 @@ public class Cars : MonoBehaviour {
     }
     void Update() {
         if (isCarMoving) {
-            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * vehicleSpeed;
+            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * vehicleSpeed * direction;
         }
     }
 
