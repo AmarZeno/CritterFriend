@@ -68,7 +68,7 @@ ModelImporter:
     400058: tailTip
     400060: transform1
     4300000: cat:polygons01
-    7400000: Take 001
+    7400000: cat@walkcycle
     9500000: //RootNode
     13700000: cat:polygons01
   materials:
@@ -91,7 +91,98 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: cat@walkcycle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cat:polygons01
+        weight: 1
+      - path: CatBodyControl
+        weight: 1
+      - path: CatBodyControl/transform1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg/leftBackKnee
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg/leftBackKnee/leftBackPaw
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg1/leftBackKnee 1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg1/leftBackKnee 1/leftBackPaw
+          1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftFrontShoulder
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftFrontShoulder/leftFrontElbow
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftFrontShoulder/leftFrontElbow/leftFrontPaw
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/neck
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/neck/head
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/rightFrontShoulder
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/rightFrontShoulder/rightFrontElbow
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/rightFrontShoulder/rightFrontElbow/rightFrontPaw
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/tailJoint
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/tailJoint/tailCenter
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/tailJoint/tailCenter/tailTip
+        weight: 1
+      - path: leftBackControl
+        weight: 1
+      - path: leftBackControl/leftBackIK
+        weight: 1
+      - path: leftFrontControl
+        weight: 1
+      - path: leftFrontControl/leftFrontIK
+        weight: 1
+      - path: nurbsSquare1
+        weight: 1
+      - path: rightBackControl
+        weight: 1
+      - path: rightBackControl/rightBackIK
+        weight: 1
+      - path: rightFrontControl
+        weight: 1
+      - path: rightFrontControl/rightFrontIK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
