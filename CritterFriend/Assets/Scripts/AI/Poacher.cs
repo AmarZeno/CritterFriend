@@ -26,6 +26,7 @@ public class Poacher : MonoBehaviour {
 
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "Target") {
+            uiManager.text_for_capture_collision.text = "Poacher captured the pet";
             uiManager.EnableTextCollision();
         }
     }
