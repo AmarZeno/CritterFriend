@@ -20,4 +20,8 @@ public class UIManager : MonoBehaviour {
     public void EnableTextCollision() {
         text_for_capture_collision.enabled = true;
     }
+
+    public void SetTextForTextCollision(string text) {
+        text_for_capture_collision.text = text;
+    }
 }
