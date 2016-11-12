@@ -13,9 +13,11 @@ public class Motion : MonoBehaviour {
     private Transform InitialHandState;
 
 
-
+    public GameObject AnimalPicked;
+    bool isAnimalPickedCoroutineExecuting;
 
     void Start() {
+        AnimalPicked = null;
         InitialHandState = transform;
     }
 
@@ -73,52 +75,35 @@ public class Motion : MonoBehaviour {
         // Check if the Leap Motion Controller is ready
         if ( !IsReady || Hands == null )
         {
-            transform.position = InitialHandState.transform.position;
-            transform.rotation = InitialHandState.transform.rotation;
+           // transform.position = InitialHandState.transform.position;
+          //  transform.rotation = InitialHandState.transform.rotation;
             return;
         }
 
         mainHand = Hands[0];
 
-        
+        if (mainHand.IsRight)
+        {
+            gameObject.SetActive(true);
+            Vector3 unityVector = mainHand.PalmPosition.ToVector3();
+            LeapProvider provider = FindObjectOfType<LeapProvider>() as LeapProvider;
+            // Matrix mat = UnityMatrixExtension.GetLeapMatrix(provider.transform);
 
-        // For relative orientation
-        // transform.rotation *= Quaternion.Euler( mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll );
-        //childRef.transform.rotation = Quaternion.Euler(mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll);
-      //  transform.SetParent(hand.transform);
-      //  transform.rotation = Quaternion.Euler(mainHand.Direction.Pitch , mainHand.Direction.Yaw , mainHand.PalmNormal.Roll );
-
-        //  transform.TransformPoint(hand.transform.po);
-        Vector3 unityVector = mainHand.PalmPosition.ToVector3();
-        // Quaternion unityRotation = Quaternion.Euler(mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll);
-        //Vector3 unityTranslation = unityRotation.origin.ToVector3();
-        //Vector3 unityScale = new Vector3(leapMatrix.xBasis.Magnitude,
-        // leapMatrix.yBasis.Magnitude,
-        // leapMatrix.zBasis.Magnitude);
-
-        LeapProvider provider = FindObjectOfType<LeapProvider>() as LeapProvider;
-       // Matrix mat = UnityMatrixExtension.GetLeapMatrix(provider.transform);
-        transform.position = UnityMatrixExtension.GetLeapMatrix(provider.transform).TransformPoint(mainHand.PalmPosition).ToVector3();
-
-        //  transform.rotation = new Quaternion(foreArm.transform.rotation.x + 90, foreArm.transform.rotation.y + 90, foreArm.transform.rotation.z + 90, foreArm.transform.rotation.w + 90);
-
-       // transform.rotation = mainHand.Arm.Rotation.ToQuaternion();
-
-        //foreach (Hand hand in provider.CurrentFrame.Hands)
-        //{
-        //    if (mainHand.IsRight)
-        //    {
-        //            transform.position = mainHand.PalmPosition.ToVector3();
-        //    }
-        //}
-
-        //  Quaternion unityRotation = Quaternion.Euler(mainHand.Direction.Pitch, mainHand.Direction.Yaw, mainHand.PalmNormal.Roll);
-        // Vector3 unityTranslation = UnityMatrixExtension.GetLeapMatrix(provider.transform).origin.ToVector3();
-        //Vector3 unityScale = new Vector3(leapMatrix.xBasis.Magnitude,
-        // leapMatrix.yBasis.Magnitude,
-        // leapMatrix.zBasis.Magnitude);
-
-        // transform.TransformPoint(unityVector);
+            if (AnimalPicked != null) {
+                AnimalPicked.transform.position = UnityMatrixExtension.GetLeapMatrix(provider.transform).TransformPoint(mainHand.PalmPosition).ToVector3();
+                StartCoroutine(ResetAnimalState());
+            }
+        }
     }
 
+    IEnumerator ResetAnimalState() {
+        if (isAnimalPickedCoroutineExecuting) {
+            yield return 0f;
+        }
+        isAnimalPickedCoroutineExecuting = true;
+        yield return 5.0f;
+        Destroy(AnimalPicked);
+        AnimalPicked = null;
+        isAnimalPickedCoroutineExecuting = false;
+    }
 }
