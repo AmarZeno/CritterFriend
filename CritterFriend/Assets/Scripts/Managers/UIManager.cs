@@ -18,10 +18,10 @@ public class UIManager : MonoBehaviour {
 
     /*is called by the Poacher class*/
     public void EnableTextCollision() {
-        text_for_capture_collision.enabled = true;
+        //text_for_capture_collision.enabled = true;
     }
 
     public void SetTextForTextCollision(string text) {
-        text_for_capture_collision.text = text;
+        //text_for_capture_collision.text = text;
     }
 }
