@@ -23,7 +23,7 @@ public class WorldUpdateHandler : MonoBehaviour {
     {
         Vector3 newPos = new Vector3(-15f, 0.5f, 0);
         SpawnedPoacher = Instantiate(SpawnPoacher, newPos, Quaternion.identity) as GameObject;
-        Indicator = Instantiate(IndicatorPrefab) as GameObject;
-        Indicator.transform.parent = SpawnedPoacher.transform;
+      //  Indicator = Instantiate(IndicatorPrefab) as GameObject;
+     //   Indicator.transform.parent = SpawnedPoacher.transform;
     }
 }

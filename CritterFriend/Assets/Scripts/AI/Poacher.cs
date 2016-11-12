@@ -13,9 +13,11 @@ public class Poacher : MonoBehaviour {
         if(navMeshAgent == null) {
             navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         }
+        target = GameObject.FindGameObjectWithTag("Target").transform;
+
 
         if(uiManager == null) {
-            uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+            //uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         }
     } 
 
@@ -26,7 +28,7 @@ public class Poacher : MonoBehaviour {
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "Target") {
             Debug.Log("collided baby");
-            uiManager.EnableTextCollision();
+           // uiManager.EnableTextCollision();
         }
     }
 }
