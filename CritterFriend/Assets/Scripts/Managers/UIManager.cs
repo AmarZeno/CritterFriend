@@ -5,6 +5,7 @@ using System.Collections;
 public class UIManager : MonoBehaviour {
 
     public Text text_for_capture_collision;
+    public Text countText;
 
     void Start() {
         if(text_for_capture_collision == null) {

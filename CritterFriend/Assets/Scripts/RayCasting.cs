@@ -4,10 +4,11 @@ using System.Collections;
 public class RayCasting : MonoBehaviour {
     public Camera camera;
     public UIManager uiManager;
+    private int count=0;
     // Use this for initialization
     void Start () {
-	
-	}
+        uiManager.countText.text = "Pets saved: " + count.ToString();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,6 +23,8 @@ public class RayCasting : MonoBehaviour {
                 uiManager.text_for_capture_collision.text = "Player saved the pet";
                 uiManager.EnableTextCollision();
                 print("I'm looking at " + hit.transform.name);
+                count += 1;
+                uiManager.countText.text = "Pets saved: " + count.ToString(); 
             }
         }           
         else
