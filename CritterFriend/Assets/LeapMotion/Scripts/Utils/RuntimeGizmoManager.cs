@@ -144,8 +144,8 @@ namespace Leap.Unity.RuntimeGizmos {
     private List<GameObject> _objList = new List<GameObject>();
     private List<IRuntimeGizmoComponent> _gizmoList = new List<IRuntimeGizmoComponent>();
     protected virtual void Update() {
-      Scene scene = SceneManager.GetActiveScene();
-      scene.GetRootGameObjects(_objList);
+      //Scene scene = SceneManager.GetActiveScene();
+     // scene.GetRootGameObjects(_objList);
       for (int i = 0; i < _objList.Count; i++) {
         GameObject obj = _objList[i];
         obj.GetComponentsInChildren(false, _gizmoList);
