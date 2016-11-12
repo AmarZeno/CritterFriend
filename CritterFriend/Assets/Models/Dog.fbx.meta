@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 6e15fad459a60274fb3b551f65b289dd
+timeCreated: 1478977589
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: backLeftBallIK
+    100002: backLeftIK
+    100004: backLeftLegController
+    100006: backRightLegController
+    100008: body
+    100010: //RootNode
+    100012: frontLeftLegController
+    100014: frontRightBallIK
+    100016: frontRIghtIK
+    100018: frontRightLegController
+    100020: GuardDog:TGuardDog_Diffuse_png1
+    100022: head
+    100024: jaw
+    100026: leftBackBall
+    100028: leftBackKnee
+    100030: leftBackLeg
+    100032: leftBackPaw
+    100034: leftFrontBall
+    100036: leftFrontBall 1
+    100038: leftFrontElbow
+    100040: leftFrontIK
+    100042: leftFrontLeg
+    100044: leftFrontPaw
+    100046: nose
+    100048: polySurface1
+    100050: polySurface1 1
+    100052: polySurface2
+    100054: polySurface3
+    100056: polySurface4
+    100058: polySurface5
+    100060: polySurface5 1
+    100062: polySurface6
+    100064: polySurface7
+    100066: polySurface8
+    100068: rightBackBall
+    100070: RightBackBallIK
+    100072: rightBackIK
+    100074: rightBackKnee
+    100076: rightBackLeg
+    100078: rightBackPaw
+    100080: rightFrontBall
+    100082: rightFrontElbow
+    100084: rightFrontLeg
+    100086: rightFrontPaw
+    100088: spine0
+    100090: spine1
+    100092: spine2
+    100094: spine3
+    100096: tail
+    100098: transform1
+    100100: transform10
+    100102: transform2
+    100104: transform3
+    100106: transform4
+    100108: transform5
+    100110: transform6
+    100112: transform7
+    100114: transform8
+    100116: transform9
+    400000: backLeftBallIK
+    400002: backLeftIK
+    400004: backLeftLegController
+    400006: backRightLegController
+    400008: body
+    400010: //RootNode
+    400012: frontLeftLegController
+    400014: frontRightBallIK
+    400016: frontRIghtIK
+    400018: frontRightLegController
+    400020: GuardDog:TGuardDog_Diffuse_png1
+    400022: head
+    400024: jaw
+    400026: leftBackBall
+    400028: leftBackKnee
+    400030: leftBackLeg
+    400032: leftBackPaw
+    400034: leftFrontBall
+    400036: leftFrontBall 1
+    400038: leftFrontElbow
+    400040: leftFrontIK
+    400042: leftFrontLeg
+    400044: leftFrontPaw
+    400046: nose
+    400048: polySurface1
+    400050: polySurface1 1
+    400052: polySurface2
+    400054: polySurface3
+    400056: polySurface4
+    400058: polySurface5
+    400060: polySurface5 1
+    400062: polySurface6
+    400064: polySurface7
+    400066: polySurface8
+    400068: rightBackBall
+    400070: RightBackBallIK
+    400072: rightBackIK
+    400074: rightBackKnee
+    400076: rightBackLeg
+    400078: rightBackPaw
+    400080: rightFrontBall
+    400082: rightFrontElbow
+    400084: rightFrontLeg
+    400086: rightFrontPaw
+    400088: spine0
+    400090: spine1
+    400092: spine2
+    400094: spine3
+    400096: tail
+    400098: transform1
+    400100: transform10
+    400102: transform2
+    400104: transform3
+    400106: transform4
+    400108: transform5
+    400110: transform6
+    400112: transform7
+    400114: transform8
+    400116: transform9
+    4300000: polySurface5
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

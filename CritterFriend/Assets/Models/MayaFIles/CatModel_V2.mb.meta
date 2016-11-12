@@ -1,0 +1,228 @@
+fileFormatVersion: 2
+guid: 76124cae97017de41bbdae8ef1e2a230
+timeCreated: 1478982683
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: backbone
+    100002: cat:polygons01
+    100004: CatBodyControl
+    100006: //RootNode
+    100008: head
+    100010: leftBackControl
+    100012: leftBackIK
+    100014: leftBackKnee
+    100016: leftBackKnee 1
+    100018: leftBackLeg
+    100020: leftBackLeg1
+    100022: leftBackPaw
+    100024: leftBackPaw 1
+    100026: leftFrontControl
+    100028: leftFrontElbow
+    100030: leftFrontIK
+    100032: leftFrontPaw
+    100034: leftFrontShoulder
+    100036: neck
+    100038: nurbsSquare1
+    100040: rightBackControl
+    100042: rightBackIK
+    100044: rightFrontControl
+    100046: rightFrontElbow
+    100048: rightFrontIK
+    100050: rightFrontPaw
+    100052: rightFrontShoulder
+    100054: tailCenter
+    100056: tailJoint
+    100058: tailTip
+    100060: transform1
+    400000: backbone
+    400002: cat:polygons01
+    400004: CatBodyControl
+    400006: //RootNode
+    400008: head
+    400010: leftBackControl
+    400012: leftBackIK
+    400014: leftBackKnee
+    400016: leftBackKnee 1
+    400018: leftBackLeg
+    400020: leftBackLeg1
+    400022: leftBackPaw
+    400024: leftBackPaw 1
+    400026: leftFrontControl
+    400028: leftFrontElbow
+    400030: leftFrontIK
+    400032: leftFrontPaw
+    400034: leftFrontShoulder
+    400036: neck
+    400038: nurbsSquare1
+    400040: rightBackControl
+    400042: rightBackIK
+    400044: rightFrontControl
+    400046: rightFrontElbow
+    400048: rightFrontIK
+    400050: rightFrontPaw
+    400052: rightFrontShoulder
+    400054: tailCenter
+    400056: tailJoint
+    400058: tailTip
+    400060: transform1
+    4300000: cat:polygons01
+    7400000: WalkCycle
+    9500000: //RootNode
+    13700000: cat:polygons01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: WalkCycle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cat:polygons01
+        weight: 1
+      - path: CatBodyControl
+        weight: 1
+      - path: CatBodyControl/transform1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg/leftBackKnee
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg/leftBackKnee/leftBackPaw
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg1/leftBackKnee 1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftBackLeg1/leftBackKnee 1/leftBackPaw
+          1
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftFrontShoulder
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftFrontShoulder/leftFrontElbow
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/leftFrontShoulder/leftFrontElbow/leftFrontPaw
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/neck
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/neck/head
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/rightFrontShoulder
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/rightFrontShoulder/rightFrontElbow
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/rightFrontShoulder/rightFrontElbow/rightFrontPaw
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/tailJoint
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/tailJoint/tailCenter
+        weight: 1
+      - path: CatBodyControl/transform1/backbone/tailJoint/tailCenter/tailTip
+        weight: 1
+      - path: leftBackControl
+        weight: 1
+      - path: leftBackControl/leftBackIK
+        weight: 1
+      - path: leftFrontControl
+        weight: 1
+      - path: leftFrontControl/leftFrontIK
+        weight: 1
+      - path: nurbsSquare1
+        weight: 1
+      - path: rightBackControl
+        weight: 1
+      - path: rightBackControl/rightBackIK
+        weight: 1
+      - path: rightFrontControl
+        weight: 1
+      - path: rightFrontControl/rightFrontIK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
