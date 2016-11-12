@@ -124,7 +124,7 @@ ModelImporter:
     400114: transform8
     400116: transform9
     4300000: polySurface5
-    7400000: Take 001
+    7400000: dog@walkcycle
     9500000: //RootNode
     13700000: polySurface5
   materials:
@@ -147,7 +147,153 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: dog@walkcycle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30.599998
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: backLeftLegController
+        weight: 1
+      - path: backLeftLegController/backLeftBallIK
+        weight: 1
+      - path: backLeftLegController/backLeftIK
+        weight: 1
+      - path: backRightLegController
+        weight: 1
+      - path: backRightLegController/RightBackBallIK
+        weight: 1
+      - path: backRightLegController/rightBackIK
+        weight: 1
+      - path: body
+        weight: 1
+      - path: body/head
+        weight: 1
+      - path: body/head/jaw
+        weight: 1
+      - path: body/head/nose
+        weight: 1
+      - path: body/leftFrontLeg
+        weight: 1
+      - path: body/leftFrontLeg/leftFrontElbow
+        weight: 1
+      - path: body/leftFrontLeg/leftFrontElbow/leftFrontPaw
+        weight: 1
+      - path: body/leftFrontLeg/leftFrontElbow/leftFrontPaw/leftFrontBall 1
+        weight: 1
+      - path: body/rightFrontLeg
+        weight: 1
+      - path: body/rightFrontLeg/rightFrontElbow
+        weight: 1
+      - path: body/rightFrontLeg/rightFrontElbow/rightFrontPaw
+        weight: 1
+      - path: body/rightFrontLeg/rightFrontElbow/rightFrontPaw/rightFrontBall
+        weight: 1
+      - path: body/spine0
+        weight: 1
+      - path: body/spine0/spine1
+        weight: 1
+      - path: body/spine0/spine1/spine2
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/leftBackLeg
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/leftBackLeg/leftBackKnee
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/leftBackLeg/leftBackKnee/leftBackPaw
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/leftBackLeg/leftBackKnee/leftBackPaw/leftBackBall
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/rightBackLeg
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/rightBackLeg/rightBackKnee
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/rightBackLeg/rightBackKnee/rightBackPaw
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/rightBackLeg/rightBackKnee/rightBackPaw/rightBackBall
+        weight: 1
+      - path: body/spine0/spine1/spine2/spine3/tail
+        weight: 1
+      - path: frontLeftLegController
+        weight: 1
+      - path: frontLeftLegController/leftFrontBall
+        weight: 1
+      - path: frontLeftLegController/leftFrontIK
+        weight: 1
+      - path: frontRightLegController
+        weight: 1
+      - path: frontRightLegController/frontRightBallIK
+        weight: 1
+      - path: frontRightLegController/frontRIghtIK
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface1 1
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface1 1/transform5
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface2
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface2/transform4
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface3
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface3/transform3
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface4
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/polySurface4/transform2
+        weight: 1
+      - path: GuardDog:TGuardDog_Diffuse_png1/transform1
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      - path: polySurface1/polySurface5 1
+        weight: 1
+      - path: polySurface1/polySurface5 1/transform10
+        weight: 1
+      - path: polySurface1/polySurface6
+        weight: 1
+      - path: polySurface1/polySurface6/transform9
+        weight: 1
+      - path: polySurface1/polySurface7
+        weight: 1
+      - path: polySurface1/polySurface7/transform8
+        weight: 1
+      - path: polySurface1/polySurface8
+        weight: 1
+      - path: polySurface1/polySurface8/transform7
+        weight: 1
+      - path: polySurface1/transform6
+        weight: 1
+      - path: polySurface5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
