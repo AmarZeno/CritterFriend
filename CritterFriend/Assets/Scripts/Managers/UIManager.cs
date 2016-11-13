@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour {
     public Text animalsSaved;
     public Text animalsCaptured;
 
+    public GameObject dayAndNight;
+
 
     void Start() {
         if(text_for_capture_collision == null) {
@@ -51,5 +53,6 @@ public class UIManager : MonoBehaviour {
     {
         button_Restart.SetActive(true);
         image_quote.SetActive(true);
+        dayAndNight.SetActive(true);
     }
 }

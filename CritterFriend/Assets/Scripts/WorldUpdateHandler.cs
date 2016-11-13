@@ -27,6 +27,11 @@ public class WorldUpdateHandler : MonoBehaviour {
         float MoveForward = Input.GetAxis("Vertical");
         SpawnedPoacher.transform.Translate(Vector3.right * Time.deltaTime);
         CheckAnimalsCaught();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     void SpawnPoacherMethod() {
