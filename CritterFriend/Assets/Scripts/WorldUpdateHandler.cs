@@ -7,7 +7,7 @@ public class WorldUpdateHandler : MonoBehaviour {
     public GameObject SpawnedPoacher;
     public GameObject IndicatorPrefab;
     public GameObject Indicator;
-
+    public UIManager UIManager;
 
     public int totalAnimalsCaught;
     public int totalAnimalsSaved;
@@ -26,6 +26,7 @@ public class WorldUpdateHandler : MonoBehaviour {
 	void Update () {
         float MoveForward = Input.GetAxis("Vertical");
         SpawnedPoacher.transform.Translate(Vector3.right * Time.deltaTime);
+        CheckAnimalsCaught();
     }
 
     void SpawnPoacherMethod() {
@@ -41,6 +42,7 @@ public class WorldUpdateHandler : MonoBehaviour {
             //game over
             isGameOver = true;
             //display some game over gui
+            UIManager.ActivateFinalMenu();
         }
     }
 
@@ -54,5 +56,15 @@ public class WorldUpdateHandler : MonoBehaviour {
 
     public void IncrementAnimalsSaved() {
         totalAnimalsSaved++;
+    }
+
+    public int GetTotalAnimalsCaught()
+    {
+        return totalAnimalsCaught;
+    }
+
+    public int GetTotalAnimalsSaved()
+    {
+        return totalAnimalsSaved;
     }
 }
