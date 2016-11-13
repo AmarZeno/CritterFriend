@@ -12,7 +12,7 @@ public class GrabTrigger : MonoBehaviour {
         if(col.gameObject.name == "palm" || col.gameObject.name == "forearm" || col.gameObject.name == "bone1" || col.gameObject.name == "bone2" || col.gameObject.name == "bone3")
         {
             // Debug.Log("adadadad");
-            Destroy(gameObject);
+            //Destroy(gameObject);
         } 
     }
 }

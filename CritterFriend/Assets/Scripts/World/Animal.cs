@@ -10,6 +10,9 @@ public class Animal : MonoBehaviour {
     public Transform poacher;
     public WorldUpdateHandler gameManager;
 
+    public GameObject savedParticleSystem;
+    public GameObject capturedParticleSystem;
+
     public GameObject[] positions;
     public int posiCount;
     public int posiLimit;
@@ -22,13 +25,14 @@ public class Animal : MonoBehaviour {
         posiLimit = positions.Length;
     }
 
-    void OnCollisionEnter(Collision other) {
+    void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Player") {
             hasOwnerArrived = true;
-            
+            Instantiate(savedParticleSystem, gameObject.transform.position + new Vector3(0, 2f, 0), Quaternion.identity);
             //spawn a particle system to cover the destroy mechanic
         } else if(other.gameObject.tag == "Poacher") {
             // Destroy(gameObject);
+            Instantiate(capturedParticleSystem, gameObject.transform.position + new Vector3(0, 2f, 0), Quaternion.identity);
             RepositionAnimal();
             //spawn a differnt particle system to cover the destory mechanic
         }

@@ -66,10 +66,11 @@ public class Poacher : MonoBehaviour {
         CheckDisatanceBetweeenPoacherAlternateTarget();
     }
 
-    void OnCollisionEnter(Collision other) {
+    void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Target") {
             uiManager.SetTextForTextCollision("Poacher captured the pet");
             uiManager.EnableTextCollision();
+            gameManager.IncerementAnimalsCaught();
         }
     }
 
@@ -90,7 +91,7 @@ public class Poacher : MonoBehaviour {
         }
         else {
             /*increment the caught counter*/
-            gameManager.IncerementAnimalsCaught();
+          
             /*destroy the animal*/
 
             /*play a particle system*/
