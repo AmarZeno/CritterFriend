@@ -16,7 +16,8 @@ public class Animal : MonoBehaviour {
     public GameObject[] positions;
     public int posiCount;
     public int posiLimit;
-    void Start() {
+    void Start()
+    {
         posiCount = 0;
         hasBeenCaught = false;
         hasOwnerArrived = false;
@@ -25,24 +26,28 @@ public class Animal : MonoBehaviour {
         posiLimit = positions.Length;
     }
 
-    void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Player") {
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
             hasOwnerArrived = true;
-            Instantiate(savedParticleSystem, gameObject.transform.position + new Vector3(0, 2f, 0), Quaternion.identity);
+
             //spawn a particle system to cover the destroy mechanic
-        } else if(other.gameObject.tag == "Poacher") {
+        }
+        else if (other.gameObject.tag == "Poacher")
+        {
             // Destroy(gameObject);
-            Instantiate(capturedParticleSystem, gameObject.transform.position + new Vector3(0, 2f, 0), Quaternion.identity);
             RepositionAnimal();
             //spawn a differnt particle system to cover the destory mechanic
         }
     }
 
-    void HasOwnerFound() {
+    void HasOwnerFound()
+    {
         //do the grab action, and the animal has been found
 
         /*destroy the animal*/
-       // Destroy(gameObject);
+        // Destroy(gameObject);
 
         /*generate a particle system for it to cover the destroy mechanic*/
 
@@ -50,12 +55,14 @@ public class Animal : MonoBehaviour {
         gameManager.IncrementAnimalsSaved();
     }
 
-    public bool HasOwnerFoundAnimal() {
+    public bool HasOwnerFoundAnimal()
+    {
         return hasOwnerArrived;
     }
 
-    public void RepositionAnimal() {
-        if(posiLimit <= posiCount)
+    public void RepositionAnimal()
+    {
+        if (posiLimit <= posiCount)
         {
             posiCount = 0;
         }

@@ -15,36 +15,43 @@ public class Poacher : MonoBehaviour {
     private bool hasAnimalFoundOwner;
     public bool hasFoundPosition;   //is executed, when we need to search for the target again
 
-   void Start() {
-        if(navMeshAgent == null) {
+    void Start()
+    {
+        if (navMeshAgent == null)
+        {
             navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         }
         target = GameObject.FindGameObjectWithTag("Target").transform;
 
-        if(uiManager == null) {
+        if (uiManager == null)
+        {
             uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         }
 
-        if (gameManager == null) {
+        if (gameManager == null)
+        {
             gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<WorldUpdateHandler>();
         }
 
-        if(alternateTarget == null) {
+        if (alternateTarget == null)
+        {
             alternateTarget = GameObject.FindGameObjectWithTag("DummyTarget").transform;
         }
 
         hasAnimalFoundOwner = false;
 
         startingPosition = gameObject.transform.position;
-    } 
+    }
 
-    void Update() {
-
+    void Update()
+    {
+        //Debug.Log("Collision detected.");
         if (target != null)
             navMeshAgent.SetDestination(target.position);
 
         /*check if game is over ? */
-        if (!gameManager.IsGameOver()) {
+        if (!gameManager.IsGameOver())
+        {
             /*find the animal where it is*/
             LocateAnimal();
         }
@@ -66,17 +73,22 @@ public class Poacher : MonoBehaviour {
         CheckDisatanceBetweeenPoacherAlternateTarget();
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Target") {
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Target")
+        {
             uiManager.SetTextForTextCollision("Poacher captured the pet");
             uiManager.EnableTextCollision();
-            gameManager.IncerementAnimalsCaught();
+            Debug.Log("Collision detected.");
         }
     }
 
-    void LocateAnimal() {
-        if (hasAnimalFoundOwner == false) {
-            if (hasFoundPosition == false) {
+    void LocateAnimal()
+    {
+        if (hasAnimalFoundOwner == false)
+        {
+            if (hasFoundPosition == false)
+            {
                 target = GameObject.FindGameObjectWithTag("Target").transform;
                 animalPosition = target.position;
                 hasFoundPosition = true;
@@ -84,14 +96,17 @@ public class Poacher : MonoBehaviour {
         }
     }
 
-    void CheckAnimalHasBeenPicked() {
-        if(target.GetComponent<Animal>().hasOwnerArrived == true) {
+    void CheckAnimalHasBeenPicked()
+    {
+        if (target.GetComponent<Animal>().hasOwnerArrived == true)
+        {
             /*divert to another location*/
             DivertPoacherToDummyTarget();
         }
-        else {
+        else
+        {
             /*increment the caught counter*/
-          
+            gameManager.IncerementAnimalsCaught();
             /*destroy the animal*/
 
             /*play a particle system*/
@@ -100,25 +115,27 @@ public class Poacher : MonoBehaviour {
         }
     }
 
-    void DivertPoacherToDummyTarget() {
+    void DivertPoacherToDummyTarget()
+    {
         hasAnimalFoundOwner = target.GetComponent<Animal>().HasOwnerFoundAnimal();
         navMeshAgent.SetDestination(alternateTarget.position);
     }
 
-    void RepositionPoacher() {
+    void RepositionPoacher()
+    {
         gameObject.transform.position = startingPosition;
         navMeshAgent.SetDestination(target.transform.position);
     }
 
-    void CheckDisatanceBetweeenPoacherAlternateTarget() { 
-        if(hasAnimalFoundOwner == true) {
-            if(Vector3.Distance(gameObject.transform.position, alternateTarget.transform.position) < 2f)
+    void CheckDisatanceBetweeenPoacherAlternateTarget()
+    {
+        if (hasAnimalFoundOwner == true)
+        {
+            if (Vector3.Distance(gameObject.transform.position, alternateTarget.transform.position) < 2f)
             {
                 RepositionPoacher();
             }
         }
     }
 
-
-    
 }
