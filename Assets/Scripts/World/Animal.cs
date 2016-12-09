@@ -14,8 +14,10 @@ public class Animal : MonoBehaviour {
     public GameObject capturedParticleSystem;
 
     public GameObject[] positions;
-    public int posiCount;
-    public int posiLimit;
+	public GameObject FallbackObject;
+
+	private int posiCount;
+	private int posiLimit;
     void Start()
     {
         posiCount = 0;
@@ -23,15 +25,18 @@ public class Animal : MonoBehaviour {
         hasOwnerArrived = false;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<WorldUpdateHandler>();
         gameObject.transform.position = positions[posiCount].transform.position;
-        posiLimit = positions.Length;
+		posiLimit = positions.Length;
+		Debug.Log ("Length is" +posiLimit);
     }
 
     void OnCollisionEnter(Collision other)
     {
+		Debug.Log (other.collider.name);
         if (other.gameObject.tag == "Player")
         {
-            hasOwnerArrived = true;
+           // hasOwnerArrived = true;
 
+			RepositionAnimal();
             //spawn a particle system to cover the destroy mechanic
         }
         else if (other.gameObject.tag == "Poacher")
@@ -62,11 +67,16 @@ public class Animal : MonoBehaviour {
 
     public void RepositionAnimal()
     {
-        if (posiLimit <= posiCount)
+		if (posiCount >= posiLimit)
         {
             posiCount = 0;
         }
-        posiCount++;
-        gameObject.transform.position = positions[posiCount].transform.position;
+		posiCount++;
+		if (posiCount < positions.Length) {
+			gameObject.transform.position = positions [posiCount].transform.position;
+		} else {
+			gameObject.transform.position = FallbackObject.transform.position;
+		}
+		gameObject.transform.rotation = Quaternion.identity;
     }
 }
