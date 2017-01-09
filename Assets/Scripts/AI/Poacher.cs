@@ -7,7 +7,7 @@ public class Poacher : MonoBehaviour {
     public Vector3 startingPosition;
     public Transform target;   //the poacher will follow this animal !!!
     public Transform alternateTarget;   //the dummy target the poacher will follow
-    public NavMeshAgent navMeshAgent;
+    public UnityEngine.AI.NavMeshAgent navMeshAgent;
     public UIManager uiManager;
     public WorldUpdateHandler gameManager;
 
@@ -19,7 +19,7 @@ public class Poacher : MonoBehaviour {
     {
         if (navMeshAgent == null)
         {
-            navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+            navMeshAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
         }
         target = GameObject.FindGameObjectWithTag("Target").transform;
 
