@@ -86,14 +86,20 @@ public class Motion : MonoBehaviour {
 
         if (Hands.Count == 2)
         {
-            //Debug.Log("Woooow");
+            // Debug.Log("2 HANDS VISIBLE");
             isAccelerationEnabled = true;
         }
-        else {
+        else if (Hands.Count == 1)
+        {
             isAccelerationEnabled = false;
+           // Debug.Log("ONLY 1 HAND VISIBLE");
         }
-
-        if (mainHand.IsRight)
+        else
+        {
+            isAccelerationEnabled = false;
+            //Debug.Log("No Hands visible");
+        }
+            if (mainHand.IsRight)
         {
             gameObject.SetActive(true);
             Vector3 unityVector = mainHand.PalmPosition.ToVector3();
@@ -104,9 +110,7 @@ public class Motion : MonoBehaviour {
                 AnimalPicked.transform.position = UnityMatrixExtension.GetLeapMatrix(provider.transform).TransformPoint(mainHand.PalmPosition).ToVector3();
                 StartCoroutine(ResetAnimalState());
             }
-        }
-
-        
+        }      
     }
 
     IEnumerator ResetAnimalState() {

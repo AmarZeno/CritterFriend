@@ -14,32 +14,25 @@ public class Poacher : MonoBehaviour {
     private Vector3 animalPosition;
     private bool hasAnimalFoundOwner;
     public bool hasFoundPosition;   //is executed, when we need to search for the target again
-
-    void Start()
-    {
-        if (navMeshAgent == null)
-        {
+    
+    void Start() {
+        if (navMeshAgent == null) {
             navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         }
         target = GameObject.FindGameObjectWithTag("Target").transform;
-
-        if (uiManager == null)
-        {
+        if (uiManager == null) {
             uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         }
 
-        if (gameManager == null)
-        {
+        if (gameManager == null) {
             gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<WorldUpdateHandler>();
         }
 
-        if (alternateTarget == null)
-        {
+        if (alternateTarget == null) {
             alternateTarget = GameObject.FindGameObjectWithTag("DummyTarget").transform;
         }
 
         hasAnimalFoundOwner = false;
-
         startingPosition = gameObject.transform.position;
     }
 
@@ -73,10 +66,8 @@ public class Poacher : MonoBehaviour {
         CheckDisatanceBetweeenPoacherAlternateTarget();
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Target")
-        {
+    void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Target") {
             uiManager.SetTextForTextCollision("Poacher captured the pet");
             uiManager.EnableTextCollision();
             Debug.Log("Collision detected.");

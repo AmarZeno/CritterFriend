@@ -28,9 +28,17 @@ public class Movement : MonoBehaviour {
            
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
+        
+
+        if (Input.GetKey(KeyCode.S)) {
             transform.position -= transform.forward * Time.deltaTime * movementSpeed;
         }
    }
+
+    void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.tag == "Target")
+        {
+            Debug.Log("sawaaaaaaaaaaaaal bhai !!!!");
+        }
+    }
 }
