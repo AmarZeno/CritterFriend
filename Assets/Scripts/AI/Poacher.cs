@@ -69,6 +69,7 @@ public class Poacher : MonoBehaviour {
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "Target") {
             uiManager.SetTextForTextCollision("Poacher captured the pet");
+            gameManager.IncerementAnimalsCaught();
             uiManager.EnableTextCollision();
             Debug.Log("Collision detected.");
         }
@@ -89,15 +90,13 @@ public class Poacher : MonoBehaviour {
 
     void CheckAnimalHasBeenPicked()
     {
-        if (target.GetComponent<Animal>().hasOwnerArrived == true)
-        {
+        if (target.GetComponent<Animal>().hasOwnerArrived == true) {
             /*divert to another location*/
             DivertPoacherToDummyTarget();
-        }
-        else
-        {
+           
+        } else {
             /*increment the caught counter*/
-            gameManager.IncerementAnimalsCaught();
+           
             /*destroy the animal*/
 
             /*play a particle system*/

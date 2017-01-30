@@ -8,13 +8,15 @@ public class Movement : MonoBehaviour {
     public GameObject playerInitialPosition;
     private Vector2 CameraEyeInitialState;
     public GameObject HMWRig;
+    public GameObject gameManager;
+    private WorldUpdateHandler worldUpdateHandler;
 
   
     //private Transform CameraEyeInitialState;
     // Use this for initialization
     void Start () {
         CameraEyeInitialState = playerInitialPosition.transform.position;
-
+        worldUpdateHandler = GameObject.FindGameObjectWithTag("GameManager").GetComponent<WorldUpdateHandler>();
     }
 	
 	// Update is called once per frame
@@ -36,9 +38,8 @@ public class Movement : MonoBehaviour {
    }
 
     void OnCollisionEnter(Collision collision) {
-        if(collision.gameObject.tag == "Target")
-        {
-            Debug.Log("sawaaaaaaaaaaaaal bhai !!!!");
+        if(collision.gameObject.tag == "Target") {
+            worldUpdateHandler.IncrementAnimalsSaved(); 
         }
     }
 }

@@ -28,8 +28,7 @@ public class UIManager : MonoBehaviour {
     }
 
 
-    void Update()
-    {
+    void Update() {
         int petsSaved = gameManager.totalAnimalsSaved;
         animalsSaved.text = "Pets Saved: " + petsSaved.ToString();
 
