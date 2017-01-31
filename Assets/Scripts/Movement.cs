@@ -42,4 +42,15 @@ public class Movement : MonoBehaviour {
             worldUpdateHandler.IncrementAnimalsSaved(); 
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Target")
+        {
+            Animal animalScript = other.gameObject.GetComponent<Animal>();
+            animalScript.hasOwnerArrived = true;
+            animalScript.RepositionAnimal();
+            worldUpdateHandler.IncrementAnimalsSaved();
+        }
+    }
 }

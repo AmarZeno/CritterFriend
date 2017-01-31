@@ -92,7 +92,7 @@ public class Poacher : MonoBehaviour {
     {
         if (target.GetComponent<Animal>().hasOwnerArrived == true) {
             /*divert to another location*/
-            DivertPoacherToDummyTarget();
+            //DivertPoacherToDummyTarget();
            
         } else {
             /*increment the caught counter*/

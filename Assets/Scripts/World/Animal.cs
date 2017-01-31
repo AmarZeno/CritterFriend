@@ -1,6 +1,8 @@
 ﻿/*this script is attached on the animal gameobject*/
 using UnityEngine;
 using System.Collections;
+using System.Text.RegularExpressions;
+using System.Net;
 
 public class Animal : MonoBehaviour {
 
@@ -25,7 +27,7 @@ public class Animal : MonoBehaviour {
         hasOwnerArrived = false;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<WorldUpdateHandler>();
         gameObject.transform.position = positions[posiCount].transform.position;
-		posiLimit = positions.Length;
+		posiLimit = GetAnimalCountFromAzure();
 		Debug.Log ("Length is" +posiLimit);
     }
 
@@ -78,5 +80,16 @@ public class Animal : MonoBehaviour {
 			gameObject.transform.position = FallbackObject.transform.position;
 		}
 		gameObject.transform.rotation = Quaternion.identity;
+    }
+
+    public int GetAnimalCountFromAzure() {
+        int enemyCount;
+        using (WebClient wc = new WebClient())
+        {
+            var client = new WebClient { Encoding = System.Text.Encoding.UTF8 };
+            string json = client.DownloadString("http://critterfriend.azurewebsites.net/enemyCount.json");
+            enemyCount = int.Parse(Regex.Match(json, @"\d+").Value);
+        }
+        return enemyCount;
     }
 }
