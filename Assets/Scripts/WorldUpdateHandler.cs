@@ -8,6 +8,7 @@ public class WorldUpdateHandler : MonoBehaviour {
     public GameObject IndicatorPrefab;
     public GameObject Indicator;
     public UIManager UIManager;
+    public GameObject GameOverUI;
 
     public int totalAnimalsCaught;
     public int totalAnimalsSaved;
@@ -20,7 +21,8 @@ public class WorldUpdateHandler : MonoBehaviour {
         totalAnimalsSaved = 0;
         isGameOver = false;
         SpawnPoacherMethod();
-	}
+        GameOverUI.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,8 +30,7 @@ public class WorldUpdateHandler : MonoBehaviour {
         SpawnedPoacher.transform.Translate(Vector3.right * Time.deltaTime);
         CheckAnimalsCaught();
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
+        if (Input.GetKeyDown(KeyCode.R)) {
             Application.LoadLevel(Application.loadedLevel);
         }
     }
@@ -42,12 +43,22 @@ public class WorldUpdateHandler : MonoBehaviour {
     }
 
     void CheckAnimalsCaught() {
-        if(totalAnimalsCaught < maxAnimalsCaught) {
+        if(totalAnimalsCaught < maxAnimalsCaught ) {
         }else {
             //game over
             isGameOver = true;
             //display some game over gui
             UIManager.ActivateFinalMenu();
+            
+        }
+
+        if(totalAnimalsCaught > 4)
+        {
+            GameOverUI.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
         }
     }
 

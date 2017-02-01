@@ -187,6 +187,7 @@
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Managers\VehicleManager.cs" />
     <Compile Include="Assets\Scripts\Misc\DieScript.cs" />
+    <Compile Include="Assets\Scripts\Misc\StartScene.cs" />
     <Compile Include="Assets\Scripts\Motion.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\RayCasting.cs" />
