@@ -54,8 +54,7 @@ public class Movement : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Target")
-        {
+        if (other.gameObject.tag == "Target") {
             Animal animalScript = other.gameObject.GetComponent<Animal>();
             animalScript.hasOwnerArrived = true;
             animalScript.RepositionAnimal();

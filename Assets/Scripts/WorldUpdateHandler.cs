@@ -52,7 +52,7 @@ public class WorldUpdateHandler : MonoBehaviour {
             
         }
 
-        if(totalAnimalsCaught > 4)
+        if(totalAnimalsCaught > 4 || totalAnimalsSaved > 4)
         {
             GameOverUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Q))
