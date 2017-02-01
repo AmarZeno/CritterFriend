@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour {
         }
 
         if(gameObject.transform.position.y < -1f) {
-            gameObject.transform.position = gameObject.transform.position + new Vector3(0f, 1f, 0f);
+            gameObject.transform.position = gameObject.transform.position + new Vector3(0f, 5f, 0f);
         }
 
         if (Input.GetKey(KeyCode.S)) {
